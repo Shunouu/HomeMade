@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <h1>Bienvenue sur notre HomeMade</h1>
+    <h1>Bienvenue sur notre site HomeMade</h1>
     <p>On vous propose des plats faits maison avec amour</p>
     <router-link to="/chefs" class="btn">Voir les Chefs</router-link>
     <footer />
@@ -41,6 +41,10 @@ export default {
 .home-page {
   text-align: center;
   padding: 200px;
+}
+
+h1 {
+  color: white;
 }
 
 .btn {
