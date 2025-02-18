@@ -40,7 +40,7 @@ export default {
 <style scoped>
 .home-page {
   text-align: center;
-  padding: 20px;
+  padding: 200px;
 }
 
 .btn {
