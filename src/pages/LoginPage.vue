@@ -2,7 +2,7 @@
   <div class="login-page">
     <h1>Connexion</h1>
     <form @submit.prevent="login">
-      <input type="text" v-model="username" placeholder="Username" required />
+      <input type="text" v-model="email" placeholder="Email" required />
       <input type="password" v-model="password" placeholder="Password" required />
       <button type="submit">Login</button>
     </form>
@@ -19,27 +19,28 @@ export default {
   setup() {
     const store = useMainStore();
     const router = useRouter();
-    const username = ref('');
+    const email = ref('');
     const password = ref('');
 
     const login = () => {
-      if (username.value && password.value) {
+      if (email.value && password.value) {
         const users = JSON.parse(localStorage.getItem('users')) || [];
-        const user = users.find(user => user.username === username.value && user.password === password.value);
+        console.log("Utilisateurs stockés :", users); // Debugging
+
+        const user = users.find(user => user.email === email.value && user.password === password.value);
         if (user) {
           store.setUser(user);
-          // Redirection après la connexion
           router.push('/');
         } else {
-          alert('Invalid username or password');
+          alert('Email ou mot de passe incorrect.');
         }
       } else {
-        alert('Please enter both username and password');
+        alert('Veuillez entrer un email et un mot de passe.');
       }
     };
 
     return {
-      username,
+      email,
       password,
       login,
     };
