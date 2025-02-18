@@ -47,6 +47,10 @@ h1 {
   color: white;
 }
 
+p {
+  color: white;
+}
+
 .btn {
   margin: 10px;
   padding: 10px 20px;

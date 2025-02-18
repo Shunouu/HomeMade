@@ -2,7 +2,6 @@
   <div class="chef-detail" v-if="chef">
     <h1>{{ chef.name }}</h1>
     <h2>Spécialités : {{ chef.specialties.join(', ') }}</h2>
-    <h3>Plats</h3>
     <div class="dish-cards">
       <DishCard
         v-for="dish in chef.dishes"
